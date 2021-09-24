@@ -1,0 +1,48 @@
+body {
+  background-color: white;
+  font-family: 'Chelsea Market', cursive;
+  color: #355041;
+  display: flex;
+}
+
+.asides {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.left-aside {
+
+}
+
+.right-aside {
+
+}
+
+h2 {
+
+}
+
+p {
+
+}
+
+.center-main {
+
+}
+
+h1 {
+
+}
+
+h3 {
+
+}
+
+.game-board {
+
+}
+
+.game-square {
+
+}
