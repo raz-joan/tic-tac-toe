@@ -20,21 +20,21 @@ class Game {
     this.currentTurn++;
 
     if(this.currentGameData[0] === this.currentGameData[1] && this.currentGameData[1] === this.currentGameData[2]) {
-      return `${currentPlayerId} wins this game!`;
+      return `${currentPlayerId} wins!`;
     } else if (this.currentGameData[3] === this.currentGameData[4] && this.currentGameData[4] === this.currentGameData[5]) {
-      return `${currentPlayerId} wins this game!`;
+      return `${currentPlayerId} wins!`;
     } else if (this.currentGameData[6] === this.currentGameData[7] && this.currentGameData[7] === this.currentGameData[8]) {
-      return `${currentPlayerId} wins this game!`;
+      return `${currentPlayerId} wins!`;
     } else if (this.currentGameData[0] === this.currentGameData[3] && this.currentGameData[3] === this.currentGameData[6]) {
-      return `${currentPlayerId} wins this game!`;
+      return `${currentPlayerId} wins!`;
     } else if (this.currentGameData[1] === this.currentGameData[4] && this.currentGameData[4] === this.currentGameData[7]) {
-      return `${currentPlayerId} wins this game!`;
+      return `${currentPlayerId} wins!`;
     } else if (this.currentGameData[2] === this.currentGameData[5] && this.currentGameData[5] === this.currentGameData[8]) {
-      return `${currentPlayerId} wins this game!`;
+      return `${currentPlayerId} wins!`;
     } else if (this.currentGameData[0] === this.currentGameData[4] && this.currentGameData[4] === this.currentGameData[8]) {
-      return `${currentPlayerId} wins this game!`;
+      return `${currentPlayerId} wins!`;
     } else if (this.currentGameData[2] === this.currentGameData[4] && this.currentGameData[4] === this.currentGameData[6]) {
-      return `${currentPlayerId} wins this game!`;
+      return `${currentPlayerId} wins!`;
     } else {
       for (var i = 0; i < this.currentGameData.length; i++) {
         if ((typeof this.currentGameData[i]) === (typeof 1)) {
@@ -46,6 +46,7 @@ class Game {
   }
 
   resetGameBoard() {
-
+    this.currentTurn = 0;
+    this.currentGameData = [0, 1, 2, 3, 4, 5, 6, 7, 8];
   }
 };
