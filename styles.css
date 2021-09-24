@@ -1,0 +1,108 @@
+body {
+  background-color: white;
+  font-family: 'Chelsea Market', cursive;
+  color: #5A8569;
+  display: flex;
+  height: 100vh;
+}
+
+h1,
+h2,
+h3,
+p {
+  display: flex;
+  justify-content: center;
+  background-color: white;
+}
+
+.asides {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  opacity: 0.5;
+}
+
+.left-aside {
+  background-image: url("./assets/WHEEL.png");
+  background-repeat: no-repeat;
+  background-size: 225%;
+  background-position: center center;
+}
+
+.right-aside {
+  background-image: url("./assets/WHEAT.png");
+  background-repeat: space;
+  background-size: contain;
+  background-position: center center;
+}
+
+h2 {
+  font-size: 30px;
+  padding: 3%;
+  border: 2px solid #9F8001;
+  border-radius: 10px;
+  margin: 5%;
+}
+
+p {
+  color: #9F8001;
+  font-size: 100px;
+  padding: 3%;
+  border: 2px solid #9F8001;
+  border-radius: 10px;
+  margin: 5% 25%;
+}
+
+.center-main {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+h1 {
+  color: #355041;
+  font-size: 50px;
+  margin-bottom: 1%;
+  margin-top: 3%;
+}
+
+h3 {
+  font-size: 20px;
+  border: 2px solid #9F8001;
+  border-radius: 10px;
+  padding: 1% 8%;
+  margin: 1% auto;
+}
+
+.game-board {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 480px;
+  height: 480px;
+  margin: 5% auto;
+}
+
+.game-square {
+  width: 150px;
+  height: 150px;
+  border: 5px solid white;
+}
+
+.four {
+  border: 5px solid #9F8001;
+}
+
+.one,
+.seven {
+  border-left: 5px solid #9F8001;
+  border-right: 5px solid #9F8001;
+}
+
+.three,
+.five {
+  border-top: 5px solid #9F8001;
+  border-bottom: 5px solid #9F8001;
+}
