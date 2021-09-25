@@ -16,7 +16,7 @@
 // X how to switch innerText for each new turn?
 
 // X how to check for win?
-// how to update the scores in instances? and then, on the DOM?
+// X how to update the scores in instances? and then, on the DOM?
 // X how to display the winner with innerText?
 
 // setTimeout for 3 - 5 delay before board resets on screen?
@@ -31,6 +31,7 @@ var leftScoreBox = document.querySelector('#leftScoreBox');
 var rightScoreBox = document.querySelector('#rightScoreBox');
 
 var currentPlayerDisplay = document.querySelector('#currentPlayerDisplay');
+var currentPlayerBox = document.querySelector('#currentPlayerBox');
 var winnerDisplay = document.querySelector('#winnerDisplay');
 
 var gameSquareZero = document.querySelector('#gameSquareZero');
@@ -72,18 +73,32 @@ function checkIfEmptySquare(e) {
       var targetClassName = e.target.classList[1];
       game.updateCurrentGameData(targetClassName, currentPlayer.id);
       var gameStatus = game.checkForWin();
-      if (gameStatus) {
-        winnerDisplay.innerText = `${currentPlayer.id} wins!`;
-        winnerDisplay.classList.toggle('hidden');
-      } else if (gameStatus === "It's a draw!") {
-        winnerDisplay.innerText = "It's a draw!";
-        winnerDisplay.classList.toggle('hidden');
+      if (gameStatus === "It's a draw!") {
+        displayWinner("It's a draw!");
+      } else if (gameStatus) {
+        updateScore(currentPlayer);
+        displayWinner(`${currentPlayer.id} wins!`);
       }
       game.incrementCurrentTurn();
       var nextCurrentPlayer = determineCurrentPlayer();
       displayCurrentPlayer(nextCurrentPlayer);
     }
   }
+};
+
+function updateScore(currentPlayer) {
+  game.updatePlayerScore(currentPlayer.id);
+  if (currentPlayer.id === 'millstone') {
+    leftScoreBox.innerText = game.playerOne.wins;
+  } else if (currentPlayer.id === 'wheat') {
+    rightScoreBox.innerText = game.playerTwo.wins;
+  }
+};
+
+function displayWinner(winner) {
+  winnerDisplay.innerText = winner;
+  winnerDisplay.classList.toggle('hidden');
+  currentPlayerBox.classList.toggle('hidden');
 };
 
 function determineCurrentPlayer() {

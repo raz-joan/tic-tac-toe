@@ -77,6 +77,10 @@ h3 {
   margin: 1% auto;
 }
 
+.winner {
+  color: #784226;
+}
+
 .hidden {
   display: none;
 }

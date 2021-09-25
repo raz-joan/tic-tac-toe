@@ -22,11 +22,21 @@ class Game {
 
   updateCurrentGameData(keyName, playerId) {
     this.currentGameData[keyName] = playerId;
-  };
+  }
+
+  updatePlayerScore(playerId) {
+    if (playerId === this.playerOne.id) {
+      this.playerOne.wins++;
+      this.playerOne.saveWinsToStorage();
+    } else if (playerId === this.playerTwo.id) {
+      this.playerTwo.wins++;
+      this.playerTwo.saveWinsToStorage();
+    }
+  }
 
   checkForWin() {
     if(this.currentGameData.zero === this.currentGameData.one && this.currentGameData.one === this.currentGameData.two) {
-      return true;;
+      return true;
     } else if (this.currentGameData.three === this.currentGameData.four && this.currentGameData.four === this.currentGameData.five) {
       return true;
     } else if (this.currentGameData.six === this.currentGameData.seven && this.currentGameData.seven === this.currentGameData.eight) {
