@@ -64,7 +64,21 @@ var game = new Game(playerMillstone, playerWheat);
 
 // event handlers and functions:
 function checkIfEmptySquare(e) {
-  if (!e.target.children.length) {
-    e.target.innerHTML = `<img src="./assets/WHEEL.png" alt="millstone icon">`;
+  var currentPlayer = determineCurrentPlayer();
+  if(e.target.classList.contains('game-square')) {
+    if (e.target.children.length < 1) {
+      e.target.innerHTML = `<img src=${currentPlayer.token} alt="${currentPlayer.id} icon">`;
+      game.incrementCurrentTurn();
+    }
   }
-}
+};
+
+function determineCurrentPlayer() {
+  var currentPlayer;
+  if (!(game.currentTurn % 2)) {
+    currentPlayer = playerMillstone;
+  } else {
+    currentPlayer = playerWheat;
+  }
+  return currentPlayer;
+};
