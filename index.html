@@ -11,46 +11,46 @@
   <body>
     <aside class="asides left-aside">
       <h2>millstone's wins:</h2>
-      <p>0</p>
+      <p id="leftScoreBox">0</p>
     </aside>
     <section class="center-main">
       <h1>TIC TAC TOE</h1>
-      <h3><span>player</span>'s turn.</h3>
-      <h3>winner status</h3>
+      <h3><span id="currentPlayerDisplay">player</span>'s turn.</h3>
+      <h3 id="winnerDisplay">winner status</h3>
       <section class="game-board">
-        <div class="game-square zero">
+        <div class="game-square zero" id="gameSquareZero">
           <!-- image is dynamically added upon click -->
           <img src="./assets/WHEAT.png" alt="wheat icon">
         </div>
-        <div class="game-square one">
+        <div class="game-square one" id="gameSquareOne">
           <!-- image is dynamically added upon click -->
           <img src="./assets/WHEEL.png" alt="millstone icon">
         </div>
-        <div class="game-square two">
+        <div class="game-square two" id="gameSquareTwo">
           <!-- image is dynamically added upon click -->
           <img src="./assets/WHEEL.png" alt="millstone icon">
         </div>
-        <div class="game-square three">
+        <div class="game-square three" id="gameSquareThree">
           <!-- image is dynamically added upon click -->
           <img src="./assets/WHEAT.png" alt="wheat icon">
         </div>
-        <div class="game-square four">
+        <div class="game-square four" id="gameSquareFour">
           <!-- image is dynamically added upon click -->
           <img src="./assets/WHEAT.png" alt="wheat icon">
         </div>
-        <div class="game-square five">
+        <div class="game-square five" id="gameSquareFive">
           <!-- image is dynamically added upon click -->
           <img src="./assets/WHEEL.png" alt="millstone icon">
         </div>
-        <div class="game-square six">
+        <div class="game-square six" id="gameSquareSix">
           <!-- image is dynamically added upon click -->
           <img src="./assets/WHEEL.png" alt="millstone icon">
         </div>
-        <div class="game-square seven">
+        <div class="game-square seven" id="gameSquareSeven">
           <!-- image is dynamically added upon click -->
           <img src="./assets/WHEAT.png" alt="wheat icon">
         </div>
-        <div class="game-square eight">
+        <div class="game-square eight" id="gameSquareEight">
           <!-- image is dynamically added upon click -->
           <img src="./assets/WHEAT.png" alt="wheat icon">
         </div>
@@ -58,7 +58,7 @@
     </section>
     <aside class="asides right-aside">
       <h2>wheat's wins:</h2>
-      <p>10</p>
+      <p id="rightScoreBox">0</p>
     </aside>
     <script type="text/javascript" src="player.js"></script>
     <script type="text/javascript" src="game.js"></script>

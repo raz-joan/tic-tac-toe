@@ -37,20 +37,21 @@ p {
   background-position: center;
 }
 
-h2 {
-  font-size: 30px;
+h2,
+p {
   padding: 3%;
   border: 2px solid #9F8001;
   border-radius: 10px;
+}
+
+h2 {
+  font-size: 30px;
   margin: 5%;
 }
 
 p {
   color: #9F8001;
   font-size: 100px;
-  padding: 3%;
-  border: 2px solid #9F8001;
-  border-radius: 10px;
   margin: 5% 25%;
 }
 

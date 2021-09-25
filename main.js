@@ -1,8 +1,23 @@
-// query each players' score box in their aside
-// query player's turn box
-// query winner box
-// query the 9 boxes (zero through eight)
+// X query each players' score box in their aside
+// X query player's turn box
+// X query winner box
+// X query the 9 boxes (zero through eight)
+// query selectors:
+var leftScoreBox = document.querySelector('#leftScoreBox');
+var rightScoreBox = document.querySelector('#rightScoreBox');
 
+var currentPlayerDisplay = document.querySelector('#currentPlayerDisplay');
+var winnerDisplay = document.querySelector('#winnerDisplay');
+
+var gameSquareZero = document.querySelector('#gameSquareZero');
+var gameSquareOne = document.querySelector('#gameSquareOne');
+var gameSquareTwo = document.querySelector('#gameSquareTwo');
+var gameSquareThree = document.querySelector('#gameSquareThree');
+var gameSquareFour = document.querySelector('#gameSquareFour');
+var gameSquareFive = document.querySelector('#gameSquareFive');
+var gameSquareSix = document.querySelector('#gameSquareSix');
+var gameSquareSeven = document.querySelector('#gameSquareSeven');
+var gameSquareEight = document.querySelector('#gameSquareEight');
 // listeners on the 9 boxes (zero through eight)
 
 // when a box is clicked ...
