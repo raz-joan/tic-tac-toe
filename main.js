@@ -20,7 +20,7 @@ var gameSquareSeven = document.querySelector('#gameSquareSeven');
 var gameSquareEight = document.querySelector('#gameSquareEight');
 
 
-// listeners on the 9 boxes (zero through eight)
+// X listeners on the 9 boxes (zero through eight)
 // event listeners:
 gameSquareZero.addEventListener('click', checkIfEmptySquare);
 gameSquareOne.addEventListener('click', checkIfEmptySquare);
@@ -32,11 +32,16 @@ gameSquareSix.addEventListener('click', checkIfEmptySquare);
 gameSquareSeven.addEventListener('click', checkIfEmptySquare);
 gameSquareEight.addEventListener('click', checkIfEmptySquare);
 
-// when a box is clicked ...
+// X when a box is clicked ...
   // does it contain an img either wheel or wheat?
   // if yes, do nothing
   // if no, innerHTML the clicked box with the current player's token
   // in this case `element.children.length = 0` i think?
+function checkIfEmptySquare(e) {
+  if (!e.target.children.length) {
+    e.target.innerHTML = `<img src="./assets/WHEEL.png" alt="millstone icon">`;
+  }
+}
 
 // keep track of turn with modulo for even/odd
 // how to switch first player from game to game?
