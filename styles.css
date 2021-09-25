@@ -27,14 +27,14 @@ p {
   background-image: url("./assets/WHEEL.png");
   background-repeat: no-repeat;
   background-size: 225%;
-  background-position: center center;
+  background-position: center;
 }
 
 .right-aside {
   background-image: url("./assets/WHEAT.png");
   background-repeat: space;
   background-size: contain;
-  background-position: center center;
+  background-position: center;
 }
 
 h2 {
