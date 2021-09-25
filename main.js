@@ -2,6 +2,30 @@
 // X query player's turn box
 // X query winner box
 // X query the 9 boxes (zero through eight)
+
+// X listeners on the 9 boxes (zero through eight)
+
+// X when a box is clicked ...
+  // does it contain an img either wheel or wheat?
+  // if yes, do nothing
+  // if no, innerHTML the clicked box with the current player's token
+  // in this case `element.children.length = 0` i think?
+
+// keep track of turn with modulo for even/odd
+// how to switch first player from game to game?
+// how to switch innerText for each new turn?
+
+// how to check for win?
+// how to update the scores in instances? and then, on the DOM?
+// how to display the winner with innerText?
+
+// setTimeout for 3 - 5 delay before board resets on screen?
+// how to reset board?
+
+// how to save each player's win total to localStorage?
+// how to retrieve each player's win total from localStorage and set innerText?
+
+
 // query selectors:
 var leftScoreBox = document.querySelector('#leftScoreBox');
 var rightScoreBox = document.querySelector('#rightScoreBox');
@@ -19,8 +43,6 @@ var gameSquareSix = document.querySelector('#gameSquareSix');
 var gameSquareSeven = document.querySelector('#gameSquareSeven');
 var gameSquareEight = document.querySelector('#gameSquareEight');
 
-
-// X listeners on the 9 boxes (zero through eight)
 // event listeners:
 gameSquareZero.addEventListener('click', checkIfEmptySquare);
 gameSquareOne.addEventListener('click', checkIfEmptySquare);
@@ -32,27 +54,17 @@ gameSquareSix.addEventListener('click', checkIfEmptySquare);
 gameSquareSeven.addEventListener('click', checkIfEmptySquare);
 gameSquareEight.addEventListener('click', checkIfEmptySquare);
 
-// X when a box is clicked ...
-  // does it contain an img either wheel or wheat?
-  // if yes, do nothing
-  // if no, innerHTML the clicked box with the current player's token
-  // in this case `element.children.length = 0` i think?
+// variables:
+var playerIds = ['millstone', 'wheat'];
+var playerTokens = ["./assets/WHEEL.png", "./assets/WHEAT.png"];
+
+var playerMillstone = new Player(playerIds[0], playerTokens[0]);
+var playerWheat = new Player(playerIds[1], playerTokens[1]);
+var game = new Game(playerMillstone, playerWheat);
+
+// event handlers and functions:
 function checkIfEmptySquare(e) {
   if (!e.target.children.length) {
     e.target.innerHTML = `<img src="./assets/WHEEL.png" alt="millstone icon">`;
   }
 }
-
-// keep track of turn with modulo for even/odd
-// how to switch first player from game to game?
-// how to switch innerText for each new turn?
-
-// how to check for win?
-// how to update the scores in instances? and then, on the DOM?
-// how to display the winner with innerText?
-
-// setTimeout for 3 - 5 delay before board resets on screen?
-// how to reset board?
-
-// how to save each player's win total to localStorage?
-// how to retrieve each player's win total from localStorage and set innerText?
