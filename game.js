@@ -20,9 +20,9 @@ class Game {
     this.currentTurn++;
   }
 
-  // updateCurrentGameData(playerId) {
-  //
-  // };
+  updateCurrentGameData(keyName, playerId) {
+    this.currentGameData[keyName] = playerId;
+  };
 
   checkForWin() {
     if(this.currentGameData.zero === this.currentGameData.one && this.currentGameData.one === this.currentGameData.two) {

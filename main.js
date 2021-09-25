@@ -72,7 +72,8 @@ function checkIfEmptySquare(e) {
       game.incrementCurrentTurn();
       var nextCurrentPlayer = determineCurrentPlayer();
       displayCurrentPlayer(nextCurrentPlayer);
-      // game.updateCurrentGameData(currentPlayer.id);
+      var targetClassName = e.target.classList[1];
+      game.updateCurrentGameData(targetClassName, currentPlayer.id);
     }
   }
 };
