@@ -18,7 +18,19 @@ var gameSquareFive = document.querySelector('#gameSquareFive');
 var gameSquareSix = document.querySelector('#gameSquareSix');
 var gameSquareSeven = document.querySelector('#gameSquareSeven');
 var gameSquareEight = document.querySelector('#gameSquareEight');
+
+
 // listeners on the 9 boxes (zero through eight)
+// event listeners:
+gameSquareZero.addEventListener('click', checkIfEmptySquare);
+gameSquareOne.addEventListener('click', checkIfEmptySquare);
+gameSquareTwo.addEventListener('click', checkIfEmptySquare);
+gameSquareThree.addEventListener('click', checkIfEmptySquare);
+gameSquareFour.addEventListener('click', checkIfEmptySquare);
+gameSquareFive.addEventListener('click', checkIfEmptySquare);
+gameSquareSix.addEventListener('click', checkIfEmptySquare);
+gameSquareSeven.addEventListener('click', checkIfEmptySquare);
+gameSquareEight.addEventListener('click', checkIfEmptySquare);
 
 // when a box is clicked ...
   // does it contain an img either wheel or wheat?
