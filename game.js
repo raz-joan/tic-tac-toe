@@ -1,49 +1,49 @@
 class Game {
   constructor(playerOne, playerTwo) {
-    // this.players = ["millstone", "wheat"];
-    // this.tokens = ["./assets/WHEEL.png", "./assets/WHEAT.png"];
     this.playerOne = playerOne;
     this.playerTwo = playerTwo;
     this.currentTurn = 0;
-    this.currentGameData = [0, 1, 2, 3, 4, 5, 6, 7, 8];
+    this.currentGameData = {
+      zero: 0,
+      one: 1,
+      two: 2,
+      three: 3,
+      four: 4,
+      five: 5,
+      six: 6,
+      seven: 7,
+      eight: 8
+    };
   }
 
   incrementCurrentTurn() {
     this.currentTurn++;
   }
 
+  // updateCurrentGameData(playerId) {
+  //
+  // };
+
   checkForWin() {
-    // var playerOne = new Player(this.players[0], this.tokens[0]);
-    // var playerTwo = new Player(this.players[1], this.tokens[1]);
-
-    // var currentPlayerId;
-    // if (this.currentTurn % 2) {
-    //   currentPlayerId = this.playerOne.id;
-    // } else {
-    //   currentPlayerId = this.playerTwo.id;
-    // }
-    //
-    // this.currentTurn++;
-
-    if(this.currentGameData[0] === this.currentGameData[1] && this.currentGameData[1] === this.currentGameData[2]) {
+    if(this.currentGameData.zero === this.currentGameData.one && this.currentGameData.one === this.currentGameData.two) {
       return `${currentPlayerId} wins!`;
-    } else if (this.currentGameData[3] === this.currentGameData[4] && this.currentGameData[4] === this.currentGameData[5]) {
+    } else if (this.currentGameData.three === this.currentGameData.four && this.currentGameData.four === this.currentGameData.five) {
       return `${currentPlayerId} wins!`;
-    } else if (this.currentGameData[6] === this.currentGameData[7] && this.currentGameData[7] === this.currentGameData[8]) {
+    } else if (this.currentGameData.six === this.currentGameData.seven && this.currentGameData.seven === this.currentGameData.eight) {
       return `${currentPlayerId} wins!`;
-    } else if (this.currentGameData[0] === this.currentGameData[3] && this.currentGameData[3] === this.currentGameData[6]) {
+    } else if (this.currentGameData.zero === this.currentGameData.three && this.currentGameData.three === this.currentGameData.six) {
       return `${currentPlayerId} wins!`;
-    } else if (this.currentGameData[1] === this.currentGameData[4] && this.currentGameData[4] === this.currentGameData[7]) {
+    } else if (this.currentGameData.one === this.currentGameData.four && this.currentGameData.four === this.currentGameData.seven) {
       return `${currentPlayerId} wins!`;
-    } else if (this.currentGameData[2] === this.currentGameData[5] && this.currentGameData[5] === this.currentGameData[8]) {
+    } else if (this.currentGameData.two === this.currentGameData.five && this.currentGameData.five === this.currentGameData.eight) {
       return `${currentPlayerId} wins!`;
-    } else if (this.currentGameData[0] === this.currentGameData[4] && this.currentGameData[4] === this.currentGameData[8]) {
+    } else if (this.currentGameData.zero === this.currentGameData.four && this.currentGameData.four === this.currentGameData.eight) {
       return `${currentPlayerId} wins!`;
-    } else if (this.currentGameData[2] === this.currentGameData[4] && this.currentGameData[4] === this.currentGameData[6]) {
+    } else if (this.currentGameData.two === this.currentGameData.four && this.currentGameData.four === this.currentGameData.six) {
       return `${currentPlayerId} wins!`;
     } else {
-      for (var i = 0; i < this.currentGameData.length; i++) {
-        if ((typeof this.currentGameData[i]) === (typeof 1)) {
+      for (const key in this.currentGameData) {
+        if ((typeof this.currentGameData[key]) === (typeof 1)) {
           return;
         }
       }
@@ -53,6 +53,16 @@ class Game {
 
   resetGameBoard() {
     this.currentTurn = 0;
-    this.currentGameData = [0, 1, 2, 3, 4, 5, 6, 7, 8];
+    this.currentGameData = {
+      zero: 0,
+      one: 1,
+      two: 2,
+      three: 3,
+      four: 4,
+      five: 5,
+      six: 6,
+      seven: 7,
+      eight: 8
+    }
   }
 };
