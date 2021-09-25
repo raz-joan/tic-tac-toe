@@ -6,14 +6,14 @@
 // X listeners on the 9 boxes (zero through eight)
 
 // X when a box is clicked ...
-  // does it contain an img either wheel or wheat?
-  // if yes, do nothing
-  // if no, innerHTML the clicked box with the current player's token
-  // in this case `element.children.length = 0` i think?
+  // X does it contain an img either wheel or wheat?
+  // X if yes, do nothing
+  // X if no, innerHTML the clicked box with the current player's token
+  // X in this case `element.children.length = 0` i think?
 
-// keep track of turn with modulo for even/odd
+// X keep track of turn with modulo for even/odd
 // how to switch first player from game to game?
-// how to switch innerText for each new turn?
+// X how to switch innerText for each new turn?
 
 // how to check for win?
 // how to update the scores in instances? and then, on the DOM?
@@ -44,6 +44,7 @@ var gameSquareSeven = document.querySelector('#gameSquareSeven');
 var gameSquareEight = document.querySelector('#gameSquareEight');
 
 // event listeners:
+window.addEventListener('load', displayInitialPlayer);
 gameSquareZero.addEventListener('click', checkIfEmptySquare);
 gameSquareOne.addEventListener('click', checkIfEmptySquare);
 gameSquareTwo.addEventListener('click', checkIfEmptySquare);
@@ -69,6 +70,9 @@ function checkIfEmptySquare(e) {
     if (e.target.children.length < 1) {
       e.target.innerHTML = `<img src=${currentPlayer.token} alt="${currentPlayer.id} icon">`;
       game.incrementCurrentTurn();
+      var nextCurrentPlayer = determineCurrentPlayer();
+      displayCurrentPlayer(nextCurrentPlayer);
+      // game.updateCurrentGameData(currentPlayer.id);
     }
   }
 };
@@ -81,4 +85,13 @@ function determineCurrentPlayer() {
     currentPlayer = playerWheat;
   }
   return currentPlayer;
+};
+
+function displayCurrentPlayer(player) {
+  currentPlayerDisplay.innerText = player.id;
+}
+
+function displayInitialPlayer() {
+  var initialPlayer = determineCurrentPlayer();
+  displayCurrentPlayer(initialPlayer);
 };
