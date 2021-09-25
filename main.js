@@ -15,9 +15,9 @@
 // how to switch first player from game to game?
 // X how to switch innerText for each new turn?
 
-// how to check for win?
+// X how to check for win?
 // how to update the scores in instances? and then, on the DOM?
-// how to display the winner with innerText?
+// X how to display the winner with innerText?
 
 // setTimeout for 3 - 5 delay before board resets on screen?
 // how to reset board?
@@ -69,11 +69,19 @@ function checkIfEmptySquare(e) {
   if(e.target.classList.contains('game-square')) {
     if (e.target.children.length < 1) {
       e.target.innerHTML = `<img src=${currentPlayer.token} alt="${currentPlayer.id} icon">`;
+      var targetClassName = e.target.classList[1];
+      game.updateCurrentGameData(targetClassName, currentPlayer.id);
+      var gameStatus = game.checkForWin();
+      if (gameStatus) {
+        winnerDisplay.innerText = `${currentPlayer.id} wins!`;
+        winnerDisplay.classList.toggle('hidden');
+      } else if (gameStatus === "It's a draw!") {
+        winnerDisplay.innerText = "It's a draw!";
+        winnerDisplay.classList.toggle('hidden');
+      }
       game.incrementCurrentTurn();
       var nextCurrentPlayer = determineCurrentPlayer();
       displayCurrentPlayer(nextCurrentPlayer);
-      var targetClassName = e.target.classList[1];
-      game.updateCurrentGameData(targetClassName, currentPlayer.id);
     }
   }
 };

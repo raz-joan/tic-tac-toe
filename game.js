@@ -26,25 +26,25 @@ class Game {
 
   checkForWin() {
     if(this.currentGameData.zero === this.currentGameData.one && this.currentGameData.one === this.currentGameData.two) {
-      return `${currentPlayerId} wins!`;
+      return true;;
     } else if (this.currentGameData.three === this.currentGameData.four && this.currentGameData.four === this.currentGameData.five) {
-      return `${currentPlayerId} wins!`;
+      return true;
     } else if (this.currentGameData.six === this.currentGameData.seven && this.currentGameData.seven === this.currentGameData.eight) {
-      return `${currentPlayerId} wins!`;
+      return true;
     } else if (this.currentGameData.zero === this.currentGameData.three && this.currentGameData.three === this.currentGameData.six) {
-      return `${currentPlayerId} wins!`;
+      return true;
     } else if (this.currentGameData.one === this.currentGameData.four && this.currentGameData.four === this.currentGameData.seven) {
-      return `${currentPlayerId} wins!`;
+      return true;
     } else if (this.currentGameData.two === this.currentGameData.five && this.currentGameData.five === this.currentGameData.eight) {
-      return `${currentPlayerId} wins!`;
+      return true;
     } else if (this.currentGameData.zero === this.currentGameData.four && this.currentGameData.four === this.currentGameData.eight) {
-      return `${currentPlayerId} wins!`;
+      return true;
     } else if (this.currentGameData.two === this.currentGameData.four && this.currentGameData.four === this.currentGameData.six) {
-      return `${currentPlayerId} wins!`;
+      return true;
     } else {
       for (const key in this.currentGameData) {
         if ((typeof this.currentGameData[key]) === (typeof 1)) {
-          return;
+          return false;
         }
       }
       return "It's a draw!";

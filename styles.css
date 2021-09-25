@@ -77,6 +77,10 @@ h3 {
   margin: 1% auto;
 }
 
+.hidden {
+  display: none;
+}
+
 .game-board {
   display: flex;
   flex-wrap: wrap;
