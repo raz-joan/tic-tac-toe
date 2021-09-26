@@ -1,18 +1,18 @@
 class Player {
-  constructor(name, icon) {
-    this.id = name;
-    this.token = icon;
+  constructor(id, token) {
+    this.id = id;
+    this.token = token;
     this.wins = 0;
   }
 
   saveWinsToStorage() {
-    var stringifiedData = JSON.stringify([this.id, this.token, this.wins]);
-    window.localStorage.setItem(name, stringifiedData);
+    var stringifiedData = JSON.stringify(this.wins);
+    window.localStorage.setItem(this.id, stringifiedData);
   }
 
   retrieveWinsFromStorage() {
-    var retrievedData = window.localStorage.getItem(name);
-    var parsedData = JSON.parse(retrievedData);
-    return parsedData;
+    var retrievedWins = window.localStorage.getItem(this.id);
+    var parsedWins = JSON.parse(retrievedWins);
+    this.wins = parsedWins || 0;
   }
 };
