@@ -43,6 +43,19 @@ Authored by: [Joan Rasmussen](https://github.com/raz-joan)
   Wheat Wins and score tracking!  
   [Giphy of Wheat wins and score tracking!](https://media.giphy.com/media/g7eXM55ujNz40Mb2VE/giphy.gif?cid=790b761106245838f19a3bb08416b1cf09654db3ab354671&rid=giphy.gif&ct=g)  
 
-## Reflections
-### Challenges
-### Wins
+## Reflections  
+  I found this project to be challenging, yet manageable, and really fun! After reading through the spec and making a plan, I created a Trello board to reflect this road map with due dates for each portion of the project's progression. I updated my google calendar accordingly, so that I had time-blocked enough time for each iteration.  
+
+  As for the project road map, I first white-boarded my logic plan and made an ordered list of everything that I thought I would need to build. Next, I wire-framed my design. Afterwards, I built out the HTML and CSS files as fully as possible. I then returned to writing the classes of player and game. Finally, I slowly worked on one piece of functionality at a time, adjusting prior code as needed so that everything "played nice". In the end, I found a few bugs that needed to be addressed, but this was not difficult to add to the code that already existed.  
+
+### Challenges  
+  The most difficult parts of this project were figuring out how to:  
+  - stop a token from being replaced if a game square was clicked again.  
+  - how to stop clicks from still occurring once a game had been won while the timeout was running.  
+
+### Wins  
+  I am most proud of the following:  
+  - having an organized and thorough road map of the project.
+  - the wireframe planning and HTML/CSS execution of it (my design is simple and clean and my code for this project was much better than previous Mod1 efforts)
+  - the JavaScript logic and connecting the data model to the DOM.
+  - finishing earlier than anticipated!
