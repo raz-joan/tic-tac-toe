@@ -23,7 +23,7 @@
 // X how to reset board?
 
 // X how to save each player's win total to localStorage?
-// how to retrieve each player's win total from localStorage and set innerText?
+// X how to retrieve each player's win total from localStorage and set innerText?
 
 
 // query selectors:
@@ -45,7 +45,7 @@ var gameSquareSeven = document.querySelector('#gameSquareSeven');
 var gameSquareEight = document.querySelector('#gameSquareEight');
 
 // event listeners:
-window.addEventListener('load', displayInitialPlayer);
+window.addEventListener('load', retrieveWins);
 gameSquareZero.addEventListener('click', checkIfEmptySquare);
 gameSquareOne.addEventListener('click', checkIfEmptySquare);
 gameSquareTwo.addEventListener('click', checkIfEmptySquare);
@@ -139,4 +139,12 @@ function displayCurrentPlayer(player) {
 function displayInitialPlayer() {
   var initialPlayer = determineCurrentPlayer();
   displayCurrentPlayer(initialPlayer);
+};
+
+function retrieveWins() {
+  playerMillstone.retrieveWinsFromStorage();
+  playerWheat.retrieveWinsFromStorage();
+  leftScoreBox.innerText = playerMillstone.wins;
+  rightScoreBox.innerText = playerWheat.wins;
+  displayInitialPlayer();
 };

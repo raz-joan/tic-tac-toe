@@ -11,8 +11,8 @@ class Player {
   }
 
   retrieveWinsFromStorage() {
-    var retrievedData = window.localStorage.getItem(this.id);
-    var parsedData = JSON.parse(retrievedData);
-    return parsedData;
+    var retrievedWins = window.localStorage.getItem(this.id);
+    var parsedWins = JSON.parse(retrievedWins);
+    this.wins = parsedWins || 0;
   }
 };
