@@ -61,8 +61,7 @@ class Game {
     }
   }
 
-  resetGameBoard() {
-    this.currentTurn = 0;
+  resetGameData() {
     this.currentGameData = {
       zero: 0,
       one: 1,

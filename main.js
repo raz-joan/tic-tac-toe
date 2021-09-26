@@ -12,17 +12,17 @@
   // X in this case `element.children.length = 0` i think?
 
 // X keep track of turn with modulo for even/odd
-// how to switch first player from game to game?
+// X how to switch first player from game to game?
 // X how to switch innerText for each new turn?
 
 // X how to check for win?
 // X how to update the scores in instances? and then, on the DOM?
 // X how to display the winner with innerText?
 
-// setTimeout for 3 - 5 delay before board resets on screen?
-// how to reset board?
+// X setTimeout for 1.5 sec delay before board resets on screen?
+// X how to reset board?
 
-// how to save each player's win total to localStorage?
+// X how to save each player's win total to localStorage?
 // how to retrieve each player's win total from localStorage and set innerText?
 
 
@@ -69,21 +69,38 @@ function checkIfEmptySquare(e) {
   var currentPlayer = determineCurrentPlayer();
   if(e.target.classList.contains('game-square')) {
     if (e.target.children.length < 1) {
-      e.target.innerHTML = `<img src=${currentPlayer.token} alt="${currentPlayer.id} icon">`;
+      e.target.innerHTML = `<img class="image" src=${currentPlayer.token} alt="${currentPlayer.id} icon">`;
       var targetClassName = e.target.classList[1];
       game.updateCurrentGameData(targetClassName, currentPlayer.id);
       var gameStatus = game.checkForWin();
       if (gameStatus === "It's a draw!") {
         displayWinner("It's a draw!");
+        setTimeout(resetGameBoard, 1500);
       } else if (gameStatus) {
         updateScore(currentPlayer);
         displayWinner(`${currentPlayer.id} wins!`);
+        setTimeout(resetGameBoard, 1500);
       }
       game.incrementCurrentTurn();
       var nextCurrentPlayer = determineCurrentPlayer();
       displayCurrentPlayer(nextCurrentPlayer);
     }
   }
+};
+
+function resetGameBoard() {
+  game.resetGameData();
+  gameSquareZero.innerHTML = ``;
+  gameSquareOne.innerHTML = ``;
+  gameSquareTwo.innerHTML = ``;
+  gameSquareThree.innerHTML = ``;
+  gameSquareFour.innerHTML = ``;
+  gameSquareFive.innerHTML = ``;
+  gameSquareSix.innerHTML = ``;
+  gameSquareSeven.innerHTML = ``;
+  gameSquareEight.innerHTML = ``;
+  displayInitialPlayer();
+  toggleCurrentWinnerDisplay();
 };
 
 function updateScore(currentPlayer) {
@@ -97,6 +114,10 @@ function updateScore(currentPlayer) {
 
 function displayWinner(winner) {
   winnerDisplay.innerText = winner;
+  toggleCurrentWinnerDisplay();
+};
+
+function toggleCurrentWinnerDisplay() {
   winnerDisplay.classList.toggle('hidden');
   currentPlayerBox.classList.toggle('hidden');
 };
