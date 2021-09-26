@@ -31,6 +31,7 @@ gameSquareEight.addEventListener('click', checkIfEmptySquare);
 // variables:
 var playerIds = ['millstone', 'wheat'];
 var playerTokens = ["./assets/WHEEL.png", "./assets/WHEAT.png"];
+var hasPlayerWon = false;
 
 var playerMillstone = new Player(playerIds[0], playerTokens[0]);
 var playerWheat = new Player(playerIds[1], playerTokens[1]);
@@ -40,15 +41,18 @@ var game = new Game(playerMillstone, playerWheat);
 function checkIfEmptySquare(e) {
   var currentPlayer = determineCurrentPlayer();
   if(e.target.classList.contains('game-square')) {
+    if (hasPlayerWon) {return;}
     if (e.target.children.length < 1) {
       e.target.innerHTML = `<img src=${currentPlayer.token} alt="${currentPlayer.id} icon">`;
       var targetClassName = e.target.classList[1];
       game.updateCurrentGameData(targetClassName, currentPlayer.id);
       var gameStatus = game.checkForWin();
       if (gameStatus === "It's a draw!") {
+        hasPlayerWon = true;
         displayWinner("It's a draw!");
         setTimeout(resetGameBoard, 1500);
       } else if (gameStatus) {
+        hasPlayerWon = true;
         updateScore(currentPlayer);
         displayWinner(`${currentPlayer.id} wins!`);
         setTimeout(resetGameBoard, 1500);
@@ -73,6 +77,7 @@ function resetGameBoard() {
   gameSquareEight.innerHTML = ``;
   displayInitialPlayer();
   toggleCurrentWinnerDisplay();
+  hasPlayerWon = false;
 };
 
 function updateScore(currentPlayer) {
