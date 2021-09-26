@@ -35,13 +35,13 @@ Authored by: [Joan Rasmussen](https://github.com/raz-joan)
 
 ## Illustrations  
   It's a draw!  
-  [Giphy of It's a Draw!](https://media.giphy.com/media/i2MfSuZ6je2PSsHWes/giphy.gif?cid=790b7611d44629e433c1f80cc262837e4b6cfdf1c644a2b1&rid=giphy.gif&ct=g)  
+  ![Giphy of It's a Draw!](https://media.giphy.com/media/i2MfSuZ6je2PSsHWes/giphy.gif?cid=790b7611d44629e433c1f80cc262837e4b6cfdf1c644a2b1&rid=giphy.gif&ct=g)  
 
   Millstone Wins!  
-  [Giphy of Millstone wins!](https://media.giphy.com/media/zU9Klrwy7paFYrfkvi/giphy.gif?cid=790b761180e62b5a7fb0fe709cf6248956fec8d36b328a45&rid=giphy.gif&ct=g)  
+  ![Giphy of Millstone wins!](https://media.giphy.com/media/zU9Klrwy7paFYrfkvi/giphy.gif?cid=790b761180e62b5a7fb0fe709cf6248956fec8d36b328a45&rid=giphy.gif&ct=g)  
 
   Wheat Wins and score tracking!  
-  [Giphy of Wheat wins and score tracking!](https://media.giphy.com/media/g7eXM55ujNz40Mb2VE/giphy.gif?cid=790b761106245838f19a3bb08416b1cf09654db3ab354671&rid=giphy.gif&ct=g)  
+  ![Giphy of Wheat wins and score tracking!](https://media.giphy.com/media/g7eXM55ujNz40Mb2VE/giphy.gif?cid=790b761106245838f19a3bb08416b1cf09654db3ab354671&rid=giphy.gif&ct=g)  
 
 ## Reflections  
   I found this project to be challenging, yet manageable, and really fun! After reading through the spec and making a plan, I created a Trello board to reflect this road map with due dates for each portion of the project's progression. I updated my google calendar accordingly, so that I had time-blocked enough time for each iteration.  
