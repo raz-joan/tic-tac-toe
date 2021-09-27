@@ -3,6 +3,7 @@ class Game {
     this.playerOne = playerOne;
     this.playerTwo = playerTwo;
     this.currentTurn = 0;
+    this.playerHasWon = false;
     this.currentGameData = {
       zero: 0,
       one: 1,
