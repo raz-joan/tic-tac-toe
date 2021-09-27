@@ -8,28 +8,9 @@ var winnerDisplay = document.querySelector('#winnerDisplay');
 
 var gameBoard = document.querySelector('#gameBoard');
 var gameSquaresAll = document.querySelectorAll('.game-square');
-// var gameSquareZero = document.querySelector('#gameSquareZero');
-// var gameSquareOne = document.querySelector('#gameSquareOne');
-// var gameSquareTwo = document.querySelector('#gameSquareTwo');
-// var gameSquareThree = document.querySelector('#gameSquareThree');
-// var gameSquareFour = document.querySelector('#gameSquareFour');
-// var gameSquareFive = document.querySelector('#gameSquareFive');
-// var gameSquareSix = document.querySelector('#gameSquareSix');
-// var gameSquareSeven = document.querySelector('#gameSquareSeven');
-// var gameSquareEight = document.querySelector('#gameSquareEight');
 
 // event listeners:
 window.addEventListener('load', retrieveWins);
-// gameSquareZero.addEventListener('click', checkIfEmptySquare);
-// gameSquareOne.addEventListener('click', checkIfEmptySquare);
-// gameSquareTwo.addEventListener('click', checkIfEmptySquare);
-// gameSquareThree.addEventListener('click', checkIfEmptySquare);
-// gameSquareFour.addEventListener('click', checkIfEmptySquare);
-// gameSquareFive.addEventListener('click', checkIfEmptySquare);
-// gameSquareSix.addEventListener('click', checkIfEmptySquare);
-// gameSquareSeven.addEventListener('click', checkIfEmptySquare);
-// gameSquareEight.addEventListener('click', checkIfEmptySquare);
-
 gameBoard.addEventListener('click', checkIfEmptySquare);
 
 // variables:
@@ -73,15 +54,6 @@ function resetGameBoard() {
   for (var i = 0; i < gameSquaresAll.length; i++) {
     gameSquaresAll[i].innerHTML = ``;
   }
-  // gameSquareZero.innerHTML = ``;
-  // gameSquareOne.innerHTML = ``;
-  // gameSquareTwo.innerHTML = ``;
-  // gameSquareThree.innerHTML = ``;
-  // gameSquareFour.innerHTML = ``;
-  // gameSquareFive.innerHTML = ``;
-  // gameSquareSix.innerHTML = ``;
-  // gameSquareSeven.innerHTML = ``;
-  // gameSquareEight.innerHTML = ``;
   displayInitialPlayer();
   toggleCurrentWinnerDisplay();
   hasPlayerWon = false;
