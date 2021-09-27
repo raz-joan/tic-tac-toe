@@ -122,6 +122,10 @@ h3 {
   border-bottom: 5px solid #9F8001;
 }
 
+.hover {
+  cursor: pointer;
+}
+
 img {
   height: 100px;
 }

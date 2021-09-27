@@ -44,6 +44,7 @@ function placePlayerToken(targetSquare) {
   var targetSquareNumber = targetSquare.classList[1];
   game.updateCurrentGameData(targetSquareNumber, game.currentPlayer.id);
   targetSquare.innerHTML = `<img src=${game.currentPlayer.token} alt="${game.currentPlayer.id} icon">`;
+  targetSquare.classList.remove('hover');
 };
 
 function checkForGameWin() {
@@ -86,6 +87,9 @@ function resetGameBoard() {
   game.resetGameData();
   for (var i = 0; i < gameSquaresAll.length; i++) {
     gameSquaresAll[i].innerHTML = ``;
+    if (!(gameSquaresAll[i].classList.contains('hover'))) {
+      gameSquaresAll[i].classList.add('hover');
+    }
   }
   displayCurrentPlayer();
   toggleCurrentWinnerDisplay();
