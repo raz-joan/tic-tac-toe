@@ -53,14 +53,17 @@ function checkIfEmptySquare(e) {
 };
 
 function placePlayerToken(targetSquare) {
-  var currentPlayer = determineCurrentPlayer();
-  targetSquare.innerHTML = `<img src=${currentPlayer.token} alt="${currentPlayer.id} icon">`;
   var targetSquareNumber = targetSquare.classList[1];
-  game.updateCurrentGameData(targetSquareNumber, currentPlayer.id);
+  game.updateCurrentGameData(targetSquareNumber, game.currentPlayer.id);
+  // var currentPlayer = determineCurrentPlayer();
+  targetSquare.innerHTML = `<img src=${game.currentPlayer.token} alt="${game.currentPlayer.id} icon">`;
+  // var targetSquareNumber = targetSquare.classList[1];
+  // game.updateCurrentGameData(targetSquareNumber, currentPlayer.id);
 };
 
 function checkForGameWin() {
-  var currentPlayer = determineCurrentPlayer();
+  // var currentPlayer = determineCurrentPlayer();
+  game.determineCurrentPlayer();
   var gameStatus = game.checkForWin();
   if (gameStatus === "It's a draw!") {
     game.playerHasWon = true;
@@ -68,13 +71,17 @@ function checkForGameWin() {
     setTimeout(resetGameBoard, 1500);
   } else if (gameStatus) {
     game.playerHasWon = true;
-    updateScore(currentPlayer);
-    displayWinner(`${currentPlayer.id} wins!`);
+    // updateScore(currentPlayer);
+    // displayWinner(`${currentPlayer.id} wins!`);
+    updateScore();
+    displayWinner(`${game.currentPlayer.id} wins!`);
     setTimeout(resetGameBoard, 1500);
   }
   game.incrementCurrentTurn();
-  var nextCurrentPlayer = determineCurrentPlayer();
-  displayCurrentPlayer(nextCurrentPlayer);
+  // var nextCurrentPlayer = determineCurrentPlayer();
+  // displayCurrentPlayer(nextCurrentPlayer);
+  game.determineCurrentPlayer();
+  displayCurrentPlayer();
 };
 
 function resetGameBoard() {
@@ -82,16 +89,18 @@ function resetGameBoard() {
   for (var i = 0; i < gameSquaresAll.length; i++) {
     gameSquaresAll[i].innerHTML = ``;
   }
-  displayInitialPlayer();
+  // displayInitialPlayer();
+  game.determineCurrentPlayer();
+  displayCurrentPlayer();
   toggleCurrentWinnerDisplay();
   game.playerHasWon = false;
 };
 
-function updateScore(currentPlayer) {
-  game.updatePlayerScore(currentPlayer.id);
-  if (currentPlayer.id === 'millstone') {
+function updateScore() {
+  game.updatePlayerScore();
+  if (game.currentPlayer.id === 'millstone') {
     leftScoreBox.innerText = game.playerOne.wins;
-  } else if (currentPlayer.id === 'wheat') {
+  } else if (game.currentPlayer.id === 'wheat') {
     rightScoreBox.innerText = game.playerTwo.wins;
   }
 };
@@ -106,29 +115,36 @@ function toggleCurrentWinnerDisplay() {
   currentPlayerBox.classList.toggle('hidden');
 };
 
-function determineCurrentPlayer() {
-  var currentPlayer;
-  if (!(game.currentTurn % 2)) {
-    currentPlayer = game.playerOne;
-  } else {
-    currentPlayer = game.playerTwo;
-  }
-  return currentPlayer;
+// function determineCurrentPlayer() {
+//   var currentPlayer;
+//   if (!(game.currentTurn % 2)) {
+//     currentPlayer = game.playerOne;
+//   } else {
+//     currentPlayer = game.playerTwo;
+//   }
+//   return currentPlayer;
+// };
+
+function displayCurrentPlayer() {
+  game.determineCurrentPlayer();
+  currentPlayerDisplay.innerText = game.currentPlayer.id;
 };
 
-function displayCurrentPlayer(player) {
-  currentPlayerDisplay.innerText = player.id;
-};
+// function displayCurrentPlayer(player) {
+//   currentPlayerDisplay.innerText = player.id;
+// };
 
-function displayInitialPlayer() {
-  var initialPlayer = determineCurrentPlayer();
-  displayCurrentPlayer(initialPlayer);
-};
+// function displayInitialPlayer() {
+//   var initialPlayer = determineCurrentPlayer();
+//   displayCurrentPlayer(initialPlayer);
+// };
 
 function retrieveWins() {
   game.playerOne.retrieveWinsFromStorage();
   game.playerTwo.retrieveWinsFromStorage();
   leftScoreBox.innerText = game.playerOne.wins;
   rightScoreBox.innerText = game.playerTwo.wins;
-  displayInitialPlayer();
+  // displayInitialPlayer();
+  game.determineCurrentPlayer();
+  displayCurrentPlayer();
 };
