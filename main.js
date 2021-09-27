@@ -17,30 +17,64 @@ gameBoard.addEventListener('click', checkIfEmptySquare);
 var game = new Game();
 
 // event handlers and functions:
+// function checkIfEmptySquare(e) {
+//   var currentPlayer = determineCurrentPlayer();
+//   if(e.target.classList.contains('game-square')) {
+//     if (game.playerHasWon) {return;}
+//     if (e.target.children.length < 1) {
+//       e.target.innerHTML = `<img src=${currentPlayer.token} alt="${currentPlayer.id} icon">`;
+//       var targetSquareNumber = e.target.classList[1];
+//       game.updateCurrentGameData(targetSquareNumber, currentPlayer.id);
+//       var gameStatus = game.checkForWin();
+//       if (gameStatus === "It's a draw!") {
+//         game.playerHasWon = true;
+//         displayWinner("It's a draw!");
+//         setTimeout(resetGameBoard, 1500);
+//       } else if (gameStatus) {
+//         game.playerHasWon = true;
+//         updateScore(currentPlayer);
+//         displayWinner(`${currentPlayer.id} wins!`);
+//         setTimeout(resetGameBoard, 1500);
+//       }
+//       game.incrementCurrentTurn();
+//       var nextCurrentPlayer = determineCurrentPlayer();
+//       displayCurrentPlayer(nextCurrentPlayer);
+//     }
+//   }
+// };
 function checkIfEmptySquare(e) {
-  var currentPlayer = determineCurrentPlayer();
   if(e.target.classList.contains('game-square')) {
     if (game.playerHasWon) {return;}
     if (e.target.children.length < 1) {
-      e.target.innerHTML = `<img src=${currentPlayer.token} alt="${currentPlayer.id} icon">`;
-      var targetSquareNumber = e.target.classList[1];
-      game.updateCurrentGameData(targetSquareNumber, currentPlayer.id);
-      var gameStatus = game.checkForWin();
-      if (gameStatus === "It's a draw!") {
-        game.playerHasWon = true;
-        displayWinner("It's a draw!");
-        setTimeout(resetGameBoard, 1500);
-      } else if (gameStatus) {
-        game.playerHasWon = true;
-        updateScore(currentPlayer);
-        displayWinner(`${currentPlayer.id} wins!`);
-        setTimeout(resetGameBoard, 1500);
-      }
-      game.incrementCurrentTurn();
-      var nextCurrentPlayer = determineCurrentPlayer();
-      displayCurrentPlayer(nextCurrentPlayer);
+      placePlayerToken(e.target);
+      checkForGameWin();
     }
   }
+};
+
+function placePlayerToken(targetSquare) {
+  var currentPlayer = determineCurrentPlayer();
+  targetSquare.innerHTML = `<img src=${currentPlayer.token} alt="${currentPlayer.id} icon">`;
+  var targetSquareNumber = targetSquare.classList[1];
+  game.updateCurrentGameData(targetSquareNumber, currentPlayer.id);
+};
+
+function checkForGameWin() {
+  var currentPlayer = determineCurrentPlayer();
+  var gameStatus = game.checkForWin();
+  if (gameStatus === "It's a draw!") {
+    game.playerHasWon = true;
+    displayWinner("It's a draw!");
+    setTimeout(resetGameBoard, 1500);
+  } else if (gameStatus) {
+    game.playerHasWon = true;
+    updateScore(currentPlayer);
+    displayWinner(`${currentPlayer.id} wins!`);
+    setTimeout(resetGameBoard, 1500);
+  }
+  game.incrementCurrentTurn();
+  var nextCurrentPlayer = determineCurrentPlayer();
+  displayCurrentPlayer(nextCurrentPlayer);
 };
 
 function resetGameBoard() {
