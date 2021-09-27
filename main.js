@@ -7,7 +7,7 @@ var currentPlayerBox = document.querySelector('#currentPlayerBox');
 var winnerDisplay = document.querySelector('#winnerDisplay');
 
 var gameBoard = document.querySelector('#gameBoard');
-
+var gameSquaresAll = document.querySelectorAll('.game-square');
 // var gameSquareZero = document.querySelector('#gameSquareZero');
 // var gameSquareOne = document.querySelector('#gameSquareOne');
 // var gameSquareTwo = document.querySelector('#gameSquareTwo');
@@ -70,15 +70,18 @@ function checkIfEmptySquare(e) {
 
 function resetGameBoard() {
   game.resetGameData();
-  gameSquareZero.innerHTML = ``;
-  gameSquareOne.innerHTML = ``;
-  gameSquareTwo.innerHTML = ``;
-  gameSquareThree.innerHTML = ``;
-  gameSquareFour.innerHTML = ``;
-  gameSquareFive.innerHTML = ``;
-  gameSquareSix.innerHTML = ``;
-  gameSquareSeven.innerHTML = ``;
-  gameSquareEight.innerHTML = ``;
+  for (var i = 0; i < gameSquaresAll.length; i++) {
+    gameSquaresAll[i].innerHTML = ``;
+  }
+  // gameSquareZero.innerHTML = ``;
+  // gameSquareOne.innerHTML = ``;
+  // gameSquareTwo.innerHTML = ``;
+  // gameSquareThree.innerHTML = ``;
+  // gameSquareFour.innerHTML = ``;
+  // gameSquareFive.innerHTML = ``;
+  // gameSquareSix.innerHTML = ``;
+  // gameSquareSeven.innerHTML = ``;
+  // gameSquareEight.innerHTML = ``;
   displayInitialPlayer();
   toggleCurrentWinnerDisplay();
   hasPlayerWon = false;
