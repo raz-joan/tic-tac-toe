@@ -14,12 +14,7 @@ window.addEventListener('load', retrieveWins);
 gameBoard.addEventListener('click', checkIfEmptySquare);
 
 // variables:
-var playerIds = ['millstone', 'wheat'];
-var playerTokens = ["./assets/WHEEL.png", "./assets/WHEAT.png"];
-
-var playerMillstone = new Player(playerIds[0], playerTokens[0]);
-var playerWheat = new Player(playerIds[1], playerTokens[1]);
-var game = new Game(playerMillstone, playerWheat);
+var game = new Game();
 
 // event handlers and functions:
 function checkIfEmptySquare(e) {
@@ -80,9 +75,9 @@ function toggleCurrentWinnerDisplay() {
 function determineCurrentPlayer() {
   var currentPlayer;
   if (!(game.currentTurn % 2)) {
-    currentPlayer = playerMillstone;
+    currentPlayer = game.playerOne;
   } else {
-    currentPlayer = playerWheat;
+    currentPlayer = game.playerTwo;
   }
   return currentPlayer;
 };
@@ -97,9 +92,9 @@ function displayInitialPlayer() {
 };
 
 function retrieveWins() {
-  playerMillstone.retrieveWinsFromStorage();
-  playerWheat.retrieveWinsFromStorage();
-  leftScoreBox.innerText = playerMillstone.wins;
-  rightScoreBox.innerText = playerWheat.wins;
+  game.playerOne.retrieveWinsFromStorage();
+  game.playerTwo.retrieveWinsFromStorage();
+  leftScoreBox.innerText = game.playerOne.wins;
+  rightScoreBox.innerText = game.playerTwo.wins;
   displayInitialPlayer();
 };

@@ -1,7 +1,7 @@
 class Game {
-  constructor(playerOne, playerTwo) {
-    this.playerOne = playerOne;
-    this.playerTwo = playerTwo;
+  constructor() {
+    this.playerOne = new Player('millstone', "./assets/WHEEL.png");
+    this.playerTwo = new Player('wheat', "./assets/WHEAT.png");
     this.currentTurn = 0;
     this.playerHasWon = false;
     this.currentGameData = {
