@@ -6,6 +6,8 @@ var currentPlayerDisplay = document.querySelector('#currentPlayerDisplay');
 var currentPlayerBox = document.querySelector('#currentPlayerBox');
 var winnerDisplay = document.querySelector('#winnerDisplay');
 
+var gameBoard = document.querySelector('#gameBoard');
+
 var gameSquareZero = document.querySelector('#gameSquareZero');
 var gameSquareOne = document.querySelector('#gameSquareOne');
 var gameSquareTwo = document.querySelector('#gameSquareTwo');
@@ -27,6 +29,8 @@ gameSquareFive.addEventListener('click', checkIfEmptySquare);
 gameSquareSix.addEventListener('click', checkIfEmptySquare);
 gameSquareSeven.addEventListener('click', checkIfEmptySquare);
 gameSquareEight.addEventListener('click', checkIfEmptySquare);
+
+gameBoard.addEventListener('click', checkIfEmptySquare);
 
 // variables:
 var playerIds = ['millstone', 'wheat'];
