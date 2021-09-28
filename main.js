@@ -2,8 +2,8 @@
 var leftScoreBox = document.querySelector('#leftScoreBox');
 var rightScoreBox = document.querySelector('#rightScoreBox');
 
+var currentPlayerName = document.querySelector('#currentPlayerName');
 var currentPlayerDisplay = document.querySelector('#currentPlayerDisplay');
-var currentPlayerBox = document.querySelector('#currentPlayerBox');
 var winnerDisplay = document.querySelector('#winnerDisplay');
 
 var gameBoard = document.querySelector('#gameBoard');
@@ -27,7 +27,7 @@ function retrieveWins() {
 };
 
 function displayCurrentPlayer() {
-  currentPlayerDisplay.innerText = game.currentPlayer.id;
+  currentPlayerName.innerText = game.currentPlayer.id;
 };
 
 function checkIfEmptySquare(e) {
@@ -71,7 +71,7 @@ function displayWinner(winner) {
 
 function toggleCurrentWinnerDisplay() {
   winnerDisplay.classList.toggle('hidden');
-  currentPlayerBox.classList.toggle('hidden');
+  currentPlayerDisplay.classList.toggle('hidden');
 };
 
 function updateScore() {
