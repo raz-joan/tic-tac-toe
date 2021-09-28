@@ -61,7 +61,7 @@ function determineGameStatus() {
     displayWinner(`${game.currentPlayer.id} wins!`);
     setTimeout(resetGameBoard, 2000);
   }
-  game.incrementCurrentPlayer();
+  game.alternateCurrentPlayer();
   displayCurrentPlayer();
 };
 

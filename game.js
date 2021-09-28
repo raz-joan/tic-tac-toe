@@ -26,7 +26,7 @@ class Game {
     }
   }
 
-  incrementCurrentPlayer() {
+  alternateCurrentPlayer() {
     if (this.currentPlayer === this.playerOne) {
       this.currentPlayer = this.playerTwo;
     } else {
