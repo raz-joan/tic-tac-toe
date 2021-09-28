@@ -32,7 +32,7 @@ function displayCurrentPlayer() {
 
 function checkIfEmptySquare(e) {
   if(e.target.classList.contains('game-square')) {
-    if (game.playerHasWon) {return;}
+    if (game.gameIsOver) {return;}
     if (e.target.children.length < 1) {
       placePlayerToken(e.target);
       checkForGameWin();
@@ -50,12 +50,12 @@ function placePlayerToken(targetSquare) {
 function checkForGameWin() {
   var gameStatus = game.checkForWin();
   if (gameStatus === "It's a draw!") {
-    game.playerHasWon = true;
+    game.gameIsOver = true;
     removeRemainingHoverClass();
     displayWinner("It's a draw!");
     setTimeout(resetGameBoard, 2000);
   } else if (gameStatus) {
-    game.playerHasWon = true;
+    game.gameIsOver = true;
     removeRemainingHoverClass();
     updateScore();
     displayWinner(`${game.currentPlayer.id} wins!`);
@@ -101,5 +101,5 @@ function resetGameBoard() {
   }
   displayCurrentPlayer();
   toggleCurrentWinnerDisplay();
-  game.playerHasWon = false;
+  game.gameIsOver = false;
 };

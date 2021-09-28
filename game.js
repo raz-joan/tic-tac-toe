@@ -4,7 +4,7 @@ class Game {
     this.playerTwo = new Player('wheat', "./assets/WHEAT.png");
     this.currentTurn = 0;
     this.currentPlayer;
-    this.playerHasWon = false;
+    this.gameIsOver = false;
     this.currentGameData = {
       zero: 0,
       one: 1,
