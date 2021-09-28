@@ -35,7 +35,7 @@ function checkIfEmptySquare(e) {
     if (game.gameIsOver) {return;}
     if (e.target.children.length < 1) {
       placePlayerToken(e.target);
-      checkForGameWin();
+      determineGameStatus();
     }
   }
 };
@@ -47,7 +47,7 @@ function placePlayerToken(targetSquare) {
   targetSquare.classList.remove('hover');
 };
 
-function checkForGameWin() {
+function determineGameStatus() {
   var gameStatus = game.checkForWin();
   if (gameStatus === "It's a draw!") {
     game.gameIsOver = true;
