@@ -34,7 +34,7 @@ class Game {
     }
   }
 
-  updateCurrentGameData(keyName, playerId) {
+  updateGameData(keyName, playerId) {
     this.currentGameData[keyName] = playerId;
   }
 

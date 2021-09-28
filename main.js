@@ -42,7 +42,7 @@ function checkIfEmptySquare(e) {
 
 function placePlayerToken(targetSquare) {
   var targetSquareNumber = targetSquare.classList[1];
-  game.updateCurrentGameData(targetSquareNumber, game.currentPlayer.id);
+  game.updateGameData(targetSquareNumber, game.currentPlayer.id);
   targetSquare.innerHTML = `<img src=${game.currentPlayer.token} alt="${game.currentPlayer.id} icon">`;
   targetSquare.classList.remove('hover');
 };
