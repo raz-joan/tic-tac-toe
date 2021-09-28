@@ -22,7 +22,7 @@ function retrieveWins() {
   game.playerTwo.retrieveWinsFromStorage();
   leftScoreBox.innerText = game.playerOne.wins;
   rightScoreBox.innerText = game.playerTwo.wins;
-  game.determineCurrentPlayer();
+  game.randomizeFirstPlayer();
   displayCurrentPlayer();
 };
 
@@ -42,7 +42,7 @@ function checkIfEmptySquare(e) {
 
 function placePlayerToken(targetSquare) {
   var targetSquareNumber = targetSquare.classList[1];
-  game.updateCurrentGameData(targetSquareNumber, game.currentPlayer.id);
+  game.updateGameData(targetSquareNumber, game.currentPlayer.id);
   targetSquare.innerHTML = `<img src=${game.currentPlayer.token} alt="${game.currentPlayer.id} icon">`;
   targetSquare.classList.remove('hover');
 };
@@ -61,8 +61,7 @@ function determineGameStatus() {
     displayWinner(`${game.currentPlayer.id} wins!`);
     setTimeout(resetGameBoard, 2000);
   }
-  game.incrementCurrentTurn();
-  game.determineCurrentPlayer();
+  game.alternateCurrentPlayer();
   displayCurrentPlayer();
 };
 
@@ -99,7 +98,6 @@ function resetGameBoard() {
     gameSquaresAll[i].innerHTML = ``;
     gameSquaresAll[i].classList.add('hover');
   }
-  displayCurrentPlayer();
   toggleCurrentWinnerDisplay();
   game.gameIsOver = false;
 };

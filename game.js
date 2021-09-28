@@ -2,7 +2,6 @@ class Game {
   constructor() {
     this.playerOne = new Player('millstone', "./assets/WHEEL.png");
     this.playerTwo = new Player('wheat', "./assets/WHEAT.png");
-    this.currentTurn = 0;
     this.currentPlayer;
     this.gameIsOver = false;
     this.currentGameData = {
@@ -18,19 +17,24 @@ class Game {
     };
   }
 
-  incrementCurrentTurn() {
-    this.currentTurn++;
-  }
-
-  determineCurrentPlayer() {
-    if (!(this.currentTurn % 2)) {
+  randomizeFirstPlayer() {
+    var randomNumber = Math.floor(Math.random() * 2);
+    if (randomNumber) {
       this.currentPlayer = this.playerOne;
     } else {
       this.currentPlayer = this.playerTwo;
     }
   }
 
-  updateCurrentGameData(keyName, playerId) {
+  alternateCurrentPlayer() {
+    if (this.currentPlayer === this.playerOne) {
+      this.currentPlayer = this.playerTwo;
+    } else {
+      this.currentPlayer = this.playerOne;
+    }
+  }
+
+  updateGameData(keyName, playerId) {
     this.currentGameData[keyName] = playerId;
   }
 
