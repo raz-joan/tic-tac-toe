@@ -51,13 +51,15 @@ function checkForGameWin() {
   var gameStatus = game.checkForWin();
   if (gameStatus === "It's a draw!") {
     game.playerHasWon = true;
+    removeRemainingHoverClass();
     displayWinner("It's a draw!");
-    setTimeout(resetGameBoard, 1500);
+    setTimeout(resetGameBoard, 2000);
   } else if (gameStatus) {
     game.playerHasWon = true;
+    removeRemainingHoverClass();
     updateScore();
     displayWinner(`${game.currentPlayer.id} wins!`);
-    setTimeout(resetGameBoard, 1500);
+    setTimeout(resetGameBoard, 2000);
   }
   game.incrementCurrentTurn();
   game.determineCurrentPlayer();
@@ -74,6 +76,14 @@ function toggleCurrentWinnerDisplay() {
   currentPlayerDisplay.classList.toggle('hidden');
 };
 
+function removeRemainingHoverClass() {
+  for (var i = 0; i < gameSquaresAll.length; i++) {
+    if (gameSquaresAll[i].classList.contains('hover')) {
+      gameSquaresAll[i].classList.remove('hover');
+    }
+  }
+};
+
 function updateScore() {
   game.updatePlayerScore();
   if (game.currentPlayer.id === 'millstone') {
@@ -87,9 +97,7 @@ function resetGameBoard() {
   game.resetGameData();
   for (var i = 0; i < gameSquaresAll.length; i++) {
     gameSquaresAll[i].innerHTML = ``;
-    if (!(gameSquaresAll[i].classList.contains('hover'))) {
-      gameSquaresAll[i].classList.add('hover');
-    }
+    gameSquaresAll[i].classList.add('hover');
   }
   displayCurrentPlayer();
   toggleCurrentWinnerDisplay();
