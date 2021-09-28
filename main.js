@@ -22,7 +22,7 @@ function retrieveWins() {
   game.playerTwo.retrieveWinsFromStorage();
   leftScoreBox.innerText = game.playerOne.wins;
   rightScoreBox.innerText = game.playerTwo.wins;
-  game.determineCurrentPlayer();
+  game.randomizeFirstPlayer();
   displayCurrentPlayer();
 };
 
@@ -61,8 +61,7 @@ function determineGameStatus() {
     displayWinner(`${game.currentPlayer.id} wins!`);
     setTimeout(resetGameBoard, 2000);
   }
-  game.incrementCurrentTurn();
-  game.determineCurrentPlayer();
+  game.incrementCurrentPlayer();
   displayCurrentPlayer();
 };
 
@@ -99,7 +98,6 @@ function resetGameBoard() {
     gameSquaresAll[i].innerHTML = ``;
     gameSquaresAll[i].classList.add('hover');
   }
-  displayCurrentPlayer();
   toggleCurrentWinnerDisplay();
   game.gameIsOver = false;
 };
