@@ -1,8 +1,10 @@
 class Game {
-  constructor(playerOne, playerTwo) {
-    this.playerOne = playerOne;
-    this.playerTwo = playerTwo;
+  constructor() {
+    this.playerOne = new Player('millstone', "./assets/WHEEL.png");
+    this.playerTwo = new Player('wheat', "./assets/WHEAT.png");
     this.currentTurn = 0;
+    this.currentPlayer;
+    this.gameIsOver = false;
     this.currentGameData = {
       zero: 0,
       one: 1,
@@ -20,15 +22,23 @@ class Game {
     this.currentTurn++;
   }
 
+  determineCurrentPlayer() {
+    if (!(this.currentTurn % 2)) {
+      this.currentPlayer = this.playerOne;
+    } else {
+      this.currentPlayer = this.playerTwo;
+    }
+  }
+
   updateCurrentGameData(keyName, playerId) {
     this.currentGameData[keyName] = playerId;
   }
 
-  updatePlayerScore(playerId) {
-    if (playerId === this.playerOne.id) {
+  updatePlayerScore() {
+    if (this.currentPlayer === this.playerOne) {
       this.playerOne.wins++;
       this.playerOne.saveWinsToStorage();
-    } else if (playerId === this.playerTwo.id) {
+    } else if (this.currentPlayer === this.playerTwo) {
       this.playerTwo.wins++;
       this.playerTwo.saveWinsToStorage();
     }

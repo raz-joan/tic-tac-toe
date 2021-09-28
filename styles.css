@@ -1,3 +1,4 @@
+/* GENERAL STYLING */
 body {
   background-color: white;
   font-family: 'Chelsea Market', cursive;
@@ -10,11 +11,12 @@ h1,
 h2,
 h3,
 p {
+  background-color: white;
   display: flex;
   justify-content: center;
-  background-color: white;
 }
 
+/* LEFT AND RIGHT SCORE PANELS STYLING */
 .asides {
   width: 25%;
   display: flex;
@@ -39,9 +41,9 @@ p {
 
 h2,
 p {
-  padding: 3%;
   border: 2px solid #9F8001;
   border-radius: 10px;
+  padding: 3%;
 }
 
 h2 {
@@ -55,6 +57,7 @@ p {
   margin: 5% 25%;
 }
 
+/* CENTER SECTION / GAMEBOARD STYLING */
 .center-main {
   width: 50%;
   display: flex;
@@ -70,11 +73,11 @@ h1 {
 }
 
 h3 {
-  font-size: 20px;
   border: 2px solid #9F8001;
   border-radius: 10px;
-  padding: 1% 8%;
+  font-size: 20px;
   margin: 1% auto;
+  padding: 1% 8%;
 }
 
 .winner {
@@ -89,18 +92,18 @@ h3 {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  width: 480px;
   height: 480px;
+  width: 480px;
   margin: 5% auto;
 }
 
 .game-square {
-  width: 150px;
-  height: 150px;
   border: 5px solid white;
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 150px;
+  width: 150px;
 }
 
 .four {
@@ -117,6 +120,10 @@ h3 {
 .five {
   border-top: 5px solid #9F8001;
   border-bottom: 5px solid #9F8001;
+}
+
+.hover {
+  cursor: pointer;
 }
 
 img {

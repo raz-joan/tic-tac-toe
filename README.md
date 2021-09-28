@@ -2,6 +2,8 @@
 
 Authored by: [Joan Rasmussen](https://github.com/raz-joan)  
 
+*Note from the author: I chose 'Flour' as the theme out of my love for grain and baking. Every flour has a unique color, aroma, texture, and baking quality - baking, as a result, is a diverse, beautiful, and creative space. When I started a cottage food bakery, my good friend, [Megan S Lott](https://www.meganslott.com/), designed these images as part of my overall branding!
+
 ## Table Of Contents
 - [Overview](#overview)
 - [Project Goals](#project-goals)
