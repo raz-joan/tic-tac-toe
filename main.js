@@ -38,6 +38,7 @@ function checkIfEmptySquare(e) {
   if(e.target.classList.contains('game-square')) {
     if (game.gameIsOver) {return;}
     if (e.target.children.length < 1) {
+      themeButton.disabled = true;
       placePlayerToken(e.target);
       determineGameStatus();
     }
@@ -104,6 +105,7 @@ function resetGameBoard() {
   }
   toggleCurrentWinnerDisplay();
   game.gameIsOver = false;
+  themeButton.disabled = false;
 };
 
 function toggleLightDarkTheme() {
