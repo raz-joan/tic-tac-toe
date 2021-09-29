@@ -65,21 +65,6 @@ p {
   justify-content: space-around;
 }
 
-.button-container {
-  display: flex;
-  justify-content: flex-end;
-}
-
-button {
-  background-color: #282C35;
-  color: #ABB2BF;
-  font-family: inherit;
-  border: none;
-  border-radius: 10px;
-  padding: 1% 6%;
-  margin: 2% 2%;
-}
-
 h1 {
   color: #355041;
   font-size: 50px;
@@ -143,4 +128,19 @@ h3 {
 
 img {
   height: 100px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+button {
+  background-color: #282C35;
+  color: #ABB2BF;
+  font-family: inherit;
+  border: none;
+  border-radius: 10px;
+  padding: 1% 6%;
+  margin: 2% 2%;
 }

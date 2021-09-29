@@ -105,3 +105,17 @@ function resetGameBoard() {
   toggleCurrentWinnerDisplay();
   game.gameIsOver = false;
 };
+
+function toggleLightDarkTheme() {
+  if (themeButton.innerText === 'dark mode') {
+    themeButton.innerText = 'light mode';
+    game.playerOne.token = "./assets/WHEEL_INVERSE.png";
+    game.playerTwo.token = "./assets/WHEAT_INVERSE.png";
+    themeLink.href = "dark-theme.css";
+  } else {
+    themeButton.innerText = 'dark mode';
+    game.playerOne.token = "./assets/WHEEL.png";
+    game.playerTwo.token = "./assets/WHEAT.png";
+    themeLink.href = "light-theme.css";
+  }
+};

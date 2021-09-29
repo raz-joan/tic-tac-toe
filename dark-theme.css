@@ -65,21 +65,6 @@ p {
   justify-content: space-around;
 }
 
-.button-container {
-  display: flex;
-  justify-content: flex-end;
-}
-
-button {
-  background-color: white;
-  color: #355041;
-  font-family: inherit;
-  border: none;
-  border-radius: 10px;
-  padding: 1% 6%;
-  margin: 2% 2%;
-}
-
 h1 {
   background-color: black;
   color: #5A8569;
@@ -144,4 +129,19 @@ h3 {
 
 img {
   height: 100px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+button {
+  background-color: white;
+  color: #355041;
+  font-family: inherit;
+  border: none;
+  border-radius: 10px;
+  padding: 1% 6%;
+  margin: 2% 2%;
 }
