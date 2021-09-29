@@ -65,6 +65,21 @@ p {
   justify-content: space-around;
 }
 
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+button {
+  background-color: #282c35;
+  color: #abb2bf;
+  font-family: inherit;
+  border: none;
+  border-radius: 10px;
+  padding: 1% 6%;
+  margin: 2% 2%;
+}
+
 h1 {
   color: #355041;
   font-size: 50px;
