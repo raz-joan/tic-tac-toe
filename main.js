@@ -9,9 +9,13 @@ var winnerDisplay = document.querySelector('#winnerDisplay');
 var gameBoard = document.querySelector('#gameBoard');
 var gameSquaresAll = document.querySelectorAll('.game-square');
 
+var themeLink = document.querySelector('#themeLink');
+var themeButton = document.querySelector('#themeButton');
+
 // event listeners:
 window.addEventListener('load', retrieveWins);
 gameBoard.addEventListener('click', checkIfEmptySquare);
+themeButton.addEventListener('click', toggleLightDarkTheme);
 
 // variables:
 var game = new Game();
