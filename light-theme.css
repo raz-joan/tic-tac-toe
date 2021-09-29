@@ -27,9 +27,6 @@ p {
 
 .left-aside {
   background-image: url("./assets/WHEEL.png");
-  /* background-repeat: no-repeat;
-  background-size: 225%;
-  background-position: center; */
   background-repeat: no-repeat;
   background-size: 180%;
   background-position: center;
@@ -37,9 +34,6 @@ p {
 
 .right-aside {
   background-image: url("./assets/WHEAT.png");
-  /* background-repeat: space;
-  background-size: contain;
-  background-position: center; */
   background-repeat: no-repeat;
   background-size: 40%;
   background-position: center;

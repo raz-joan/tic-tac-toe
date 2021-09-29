@@ -27,9 +27,6 @@ p {
 
 .left-aside {
   background-image: url("./assets/WHEEL_INVERSE.png");
-  /* background-repeat: no-repeat;
-  background-size: 240%;
-  background-position: center; */
   background-repeat: no-repeat;
   background-size: 195%;
   background-position: center;
@@ -37,9 +34,6 @@ p {
 
 .right-aside {
   background-image: url("./assets/WHEAT_INVERSE.png");
-  /* background-repeat: repeat;
-  background-size: 85%;
-  background-position: center; */
   background-repeat: no-repeat;
   background-size: 75%;
   background-position: center;
