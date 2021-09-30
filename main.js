@@ -9,9 +9,13 @@ var winnerDisplay = document.querySelector('#winnerDisplay');
 var gameBoard = document.querySelector('#gameBoard');
 var gameSquaresAll = document.querySelectorAll('.game-square');
 
+var themeLink = document.querySelector('#themeLink');
+var themeButton = document.querySelector('#themeButton');
+
 // event listeners:
 window.addEventListener('load', retrieveWins);
 gameBoard.addEventListener('click', checkIfEmptySquare);
+themeButton.addEventListener('click', toggleLightDarkTheme);
 
 // variables:
 var game = new Game();
@@ -34,6 +38,7 @@ function checkIfEmptySquare(e) {
   if(e.target.classList.contains('game-square')) {
     if (game.gameIsOver) {return;}
     if (e.target.children.length < 1) {
+      themeButton.classList.add('notVisible');
       placePlayerToken(e.target);
       determineGameStatus();
     }
@@ -100,4 +105,19 @@ function resetGameBoard() {
   }
   toggleCurrentWinnerDisplay();
   game.gameIsOver = false;
+  themeButton.classList.remove('notVisible');
+};
+
+function toggleLightDarkTheme() {
+  if (themeButton.innerText === 'dark mode') {
+    themeButton.innerText = 'light mode';
+    game.playerOne.token = "./assets/WHEEL_INVERSE.png";
+    game.playerTwo.token = "./assets/WHEAT_INVERSE.png";
+    themeLink.href = "dark-theme.css";
+  } else {
+    themeButton.innerText = 'dark mode';
+    game.playerOne.token = "./assets/WHEEL.png";
+    game.playerTwo.token = "./assets/WHEAT.png";
+    themeLink.href = "light-theme.css";
+  }
 };

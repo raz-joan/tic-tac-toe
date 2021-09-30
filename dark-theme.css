@@ -1,6 +1,6 @@
 /* GENERAL STYLING */
 body {
-  background-color: white;
+  background-color: black;
   font-family: 'Chelsea Market', cursive;
   color: #5A8569;
   display: flex;
@@ -22,20 +22,20 @@ p {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  opacity: 0.6;
+  opacity: 0.9;
 }
 
 .left-aside {
-  background-image: url("./assets/WHEEL.png");
+  background-image: url("./assets/WHEEL_INVERSE.png");
   background-repeat: no-repeat;
-  background-size: 225%;
+  background-size: 165%;
   background-position: center;
 }
 
 .right-aside {
-  background-image: url("./assets/WHEAT.png");
-  background-repeat: space;
-  background-size: contain;
+  background-image: url("./assets/WHEAT_INVERSE.png");
+  background-repeat: no-repeat;
+  background-size: 75%;
   background-position: center;
 }
 
@@ -66,7 +66,8 @@ p {
 }
 
 h1 {
-  color: #355041;
+  background-color: black;
+  color: #5A8569;
   font-size: 50px;
   margin-bottom: 1%;
   margin-top: 3%;
@@ -98,7 +99,7 @@ h3 {
 }
 
 .game-square {
-  border: 5px solid white;
+  border: 5px solid black;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -128,4 +129,18 @@ h3 {
 
 img {
   height: 100px;
+}
+
+.notVisible {
+  visibility: hidden;
+}
+
+button {
+  background-color: white;
+  color: #5A8569;
+  font-family: inherit;
+  border: none;
+  border-radius: 10px;
+  margin: 1% auto;
+  padding: 1% 6%;
 }
