@@ -2,9 +2,9 @@
 
 Authored by: [Joan Rasmussen](https://github.com/raz-joan)  
 
-*Note from the author: I chose 'Flour' as the theme out of my love for grain and baking. Every flour has a unique color, aroma, texture, and baking quality - baking, as a result, is a diverse, beautiful, and creative space. When I started a cottage food bakery, my good friend, [Megan S Lott](https://www.meganslott.com/), designed these images as part of my overall branding!  
+* See the deployed application [here](https://raz-joan.github.io/tic-tac-toe/)!  
 
-*Deploy this application [here](https://raz-joan.github.io/tic-tac-toe/)!
+*Note from the author: I chose 'Flour' as the theme out of my love for grain and baking. Every flour has a unique color, aroma, texture, and baking quality - baking, as a result, is a diverse, beautiful, and creative space. When I started a cottage food bakery, my good friend, [Megan S Lott](https://www.meganslott.com/), designed these images as part of my overall branding!  
 
 ## Table Of Contents
 - [Overview](#overview)
@@ -38,17 +38,15 @@ Authored by: [Joan Rasmussen](https://github.com/raz-joan)
   This application consists of one HTML file (index.html), one CSS file (styles.css), and three JavaScript files (game.js, player.js, and main.js). The HTML provides the structure of the application, the CSS provides the styling of this structure, and the JavaScript provides the behavior needed to update the structure, the data models and the DOM. There are two class files, Game and Player, which store the information for each player and the current game, and then the main.js file contains the queried variables, event listeners and handlers, as well as, the functions that update the data models and then the DOM.  
 
 ## Illustrations  
-  It's a draw!  
+#### Link to Video:  
+[![Tic Tac Toe Project](https://res.cloudinary.com/marcomontalbano/image/upload/v1639455147/video_to_markdown/images/youtube--cU1Q6k5_LVQ-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://www.youtube.com/watch?v=cU1Q6k5_LVQ "Tic Tac Toe Project")  
 
-  ![Giphy of It's a Draw!](https://media.giphy.com/media/i2MfSuZ6je2PSsHWes/giphy.gif?cid=790b7611d44629e433c1f80cc262837e4b6cfdf1c644a2b1&rid=giphy.gif&ct=g)  
+#### Desktop:
+<img width="800" alt="Screen Shot 2021-12-13 at 9 10 20 PM" src="https://user-images.githubusercontent.com/80644408/145931945-36172cc4-3443-446e-991f-cd36fc4623e7.png">
+<img width="800" alt="Screen Shot 2021-12-13 at 9 10 34 PM" src="https://user-images.githubusercontent.com/80644408/145931947-32d1cf4f-336d-4b16-a43b-20e0fb2f11f3.png">  
 
-  Millstone Wins and score increments!  
-
-  ![Giphy of Millstone wins and score increments!](https://media.giphy.com/media/zU9Klrwy7paFYrfkvi/giphy.gif?cid=790b761180e62b5a7fb0fe709cf6248956fec8d36b328a45&rid=giphy.gif&ct=g)  
-
-  Wheat Wins and score tracking!  
-
-  ![Giphy of Wheat wins and score tracking!](https://media.giphy.com/media/g7eXM55ujNz40Mb2VE/giphy.gif?cid=790b761106245838f19a3bb08416b1cf09654db3ab354671&rid=giphy.gif&ct=g)  
+#### Responsive:
+<img width="250" alt="Screen Shot 2021-12-13 at 9 11 21 PM" src="https://user-images.githubusercontent.com/80644408/145931951-b666fb05-16e2-4258-af8e-c4784ecb5991.png"><img width="250" alt="Screen Shot 2021-12-13 at 9 11 38 PM" src="https://user-images.githubusercontent.com/80644408/145931954-6e559351-1e5b-4c95-b37c-823dfb376e35.png">
 
 ## Reflections  
   I found this project to be challenging, yet manageable, and really fun! After reading through the spec and making a plan, I created a Trello board to reflect this road map with due dates for each portion of the project's progression. I updated my google calendar accordingly, so that I had time-blocked enough time for each iteration.  
